@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="20q-oc-kPq" customClass="SudokuCell" customModule="Sudoku" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhh-V4-zlV">
+                        <rect key="frame" x="5" y="5" width="40" height="40"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="lhh-V4-zlV" firstAttribute="top" secondItem="20q-oc-kPq" secondAttribute="top" constant="5" id="LiD-um-Jq2"/>
+                <constraint firstAttribute="bottom" secondItem="lhh-V4-zlV" secondAttribute="bottom" constant="5" id="QYT-UH-muw"/>
+                <constraint firstItem="lhh-V4-zlV" firstAttribute="leading" secondItem="20q-oc-kPq" secondAttribute="leading" constant="5" id="XMt-kJ-tsD"/>
+                <constraint firstAttribute="trailing" secondItem="lhh-V4-zlV" secondAttribute="trailing" constant="5" id="xF4-G0-brP"/>
+            </constraints>
+            <connections>
+                <outlet property="cellText" destination="lhh-V4-zlV" id="S2G-zQ-Zgh"/>
+            </connections>
+            <point key="canvasLocation" x="570" y="485"/>
+        </collectionViewCell>
+    </objects>
+</document>

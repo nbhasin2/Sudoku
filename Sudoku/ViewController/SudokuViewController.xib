@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SudokuViewController" customModule="Sudoku" customModuleProvider="target">
+            <connections>
+                <outlet property="sudokuUICollectionView" destination="cZm-Fw-x88" id="oev-3J-V3C"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fe3-MF-QLs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDx-wo-iug">
+                    <rect key="frame" x="0.0" y="552" width="600" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="gNV-q9-uAg"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZm-Fw-x88">
+                    <rect key="frame" x="125" y="98" width="350" height="350"/>
+                    <color key="backgroundColor" red="0.73351120401578618" green="0.91352890752617943" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="350" id="NaN-Ds-R7V"/>
+                        <constraint firstAttribute="height" constant="350" id="tyq-kW-O9R"/>
+                    </constraints>
+                    <inset key="scrollIndicatorInsets" minX="2" minY="2" maxX="2" maxY="0.0"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="Lxh-Hz-oEK">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cZm-Fw-x88" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ocg-hA-9zT"/>
+                <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" id="V9W-2T-3h5"/>
+                <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" id="aso-zA-qIk"/>
+                <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aya-ZZ-ROz"/>
+                <constraint firstItem="cZm-Fw-x88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="98" id="lRT-Tl-cal"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
