@@ -24,6 +24,10 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     //  Variables
     
+    var sudokuSolver: SudokuSolver?
+    
+    //  UI Elements
+    
     @IBOutlet weak var sudokuUICollectionView: UICollectionView!
     
     //  MARK: - Constructors
@@ -62,6 +66,8 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     private func initializeView()
     {
+        self.sudokuSolver = SudokuSolver()
+        
         self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
         self.sudokuUICollectionView?.scrollEnabled = true
         self.sudokuUICollectionView?.delegate = self
@@ -103,7 +109,7 @@ extension SudokuViewController: UICollectionViewDataSource
         // Configure cell
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SudokuCell
-        cell.cellText.text = "1"
+        cell.cellText.text = "\(sudokuSolver!.sudokuGrid[indexPath.section][indexPath.row])"
         cell.cellText.delegate = self
         return cell
     }
