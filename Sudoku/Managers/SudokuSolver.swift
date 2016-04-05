@@ -40,6 +40,10 @@ class SudokuSolver
     
     let EMPTY = 0
     
+    func solve()
+    {
+        solve(0, col: 0, grid: &self.sudokuGrid)
+    }
     
     func solve(var row:Int, var col:Int, inout grid:[[Int]]) -> Bool
     {

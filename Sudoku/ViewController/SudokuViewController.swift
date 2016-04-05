@@ -81,6 +81,20 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         textField.resignFirstResponder()
         return true;
     }
+    
+    
+    @IBAction func solveAction(sender: UIButton)
+    {
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            self.sudokuSolver?.solve()
+            
+            dispatch_async(dispatch_get_main_queue())
+            {
+                self.sudokuUICollectionView.reloadData()
+            }
+        }
+    }
 }
 
 // Delegate Flow Layout

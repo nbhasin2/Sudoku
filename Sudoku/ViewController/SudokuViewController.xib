@@ -22,6 +22,9 @@
                         <constraint firstAttribute="height" constant="48" id="gNV-q9-uAg"/>
                     </constraints>
                     <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="solveAction:" destination="-1" eventType="touchUpInside" id="C1G-td-8Td"/>
+                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZm-Fw-x88">
                     <rect key="frame" x="125" y="98" width="350" height="350"/>
