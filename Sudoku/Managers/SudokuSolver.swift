@@ -11,43 +11,44 @@ import Foundation
 class SudokuSolver
 {
     
-    
-    var sudokuGrid: [[Int]] = [[0,2,0,0,0,0,4,0,7],
-                               
-                               [0,0,7,0,2,4,0,5,0],
-                               
-                               [3,0,0,0,1,0,2,0,6],
-                               
-                               [4,0,0,3,0,5,9,7,1],
-                               
-                               [7,0,0,0,0,0,0,0,5],
-                               
-                               [8,3,5,1,0,7,0,0,2],
-                               
-                               [5,0,9,0,7,0,0,0,8],
-                               
-                               [0,7,0,8,4,0,5,0,0],
-                               
-                               [2,0,3,0,0,0,0,6,0]]
+    var sudokuGridSolution:[[Int]]?
+    var sudokuBoard:[[Int]]
     
     
+    init(board:[[Int]])
+    {
+        sudokuBoard = board
+        sudokuGridSolution = deepCopy(board)
+    }
     
-    //for x in 0 ..< sudokuGrid.count {
-    //    for y in 0 ..< sudokuGrid[x].count {
-    //        print("vector[\(x), \(y)] = \(sudokuGrid[x][y])" )
-    //    }
-    //}
+    // Takes in sudoku grid and returns a deep copy of the array
+    
+    private func deepCopy(sudokuGrid:[[Int]]) -> [[Int]]
+    {
+        var gridCopy = [[Int]]()
+        
+        for x in 0 ..< sudokuGrid.count {
+            var gridRow = [Int]()
+            for y in 0 ..< sudokuGrid[x].count {
+                gridRow.append(sudokuGrid[x][y])
+            }
+            gridCopy.append(gridRow)
+        }
+        
+        return gridCopy
+    }
     
     let EMPTY = 0
     
     func solve()
     {
-        solve(0, col: 0, grid: &self.sudokuGrid)
+        self.sudokuGridSolution = deepCopy(self.sudokuBoard)
+        solve(0, col: 0, grid: &self.sudokuGridSolution!)
     }
     
-    func solve(var row:Int, var col:Int, inout grid:[[Int]]) -> Bool
+    private func solve(var row:Int, var col:Int, inout grid:[[Int]]) -> Bool
     {
-        if(row == 9)
+        if (row == 9)
         {
             row = 0;
             
@@ -58,7 +59,7 @@ class SudokuSolver
             }
         }
         
-        if grid[row][col] != EMPTY
+        if (grid[row][col] != EMPTY)
         {
             return solve(row + 1, col: col, grid: &grid)
         }

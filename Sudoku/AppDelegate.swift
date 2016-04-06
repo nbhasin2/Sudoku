@@ -60,9 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window!.makeKeyAndVisible()
         
-        var solver = SudokuSolver()
-        solver.solve(0, col: 0, grid: &solver.sudokuGrid)
-        print(solver.sudokuGrid)
+        let solver = SudokuSolver(board: sudokuGrid)
+        solver.solve()
+//        solver.solve(0, col: 0, grid: &solver.sudokuGrid)
+        print(solver.sudokuGridSolution)
     }
     
 }

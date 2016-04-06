@@ -28,7 +28,7 @@
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZm-Fw-x88">
                     <rect key="frame" x="125" y="98" width="350" height="350"/>
-                    <color key="backgroundColor" red="0.73351120401578618" green="0.91352890752617943" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="350" id="NaN-Ds-R7V"/>
                         <constraint firstAttribute="height" constant="350" id="tyq-kW-O9R"/>

@@ -14,9 +14,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhh-V4-zlV">
-                        <rect key="frame" x="5" y="5" width="40" height="40"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhh-V4-zlV">
+                        <rect key="frame" x="-6" y="-7" width="64" height="66"/>
+                        <color key="backgroundColor" red="0.93535630838585959" green="1" blue="0.99459699822016157" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
@@ -24,10 +24,10 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="lhh-V4-zlV" firstAttribute="top" secondItem="20q-oc-kPq" secondAttribute="top" constant="5" id="LiD-um-Jq2"/>
-                <constraint firstAttribute="bottom" secondItem="lhh-V4-zlV" secondAttribute="bottom" constant="5" id="QYT-UH-muw"/>
-                <constraint firstItem="lhh-V4-zlV" firstAttribute="leading" secondItem="20q-oc-kPq" secondAttribute="leading" constant="5" id="XMt-kJ-tsD"/>
-                <constraint firstAttribute="trailing" secondItem="lhh-V4-zlV" secondAttribute="trailing" constant="5" id="xF4-G0-brP"/>
+                <constraint firstItem="lhh-V4-zlV" firstAttribute="top" secondItem="20q-oc-kPq" secondAttribute="top" constant="-7" id="LiD-um-Jq2"/>
+                <constraint firstAttribute="bottom" secondItem="lhh-V4-zlV" secondAttribute="bottom" constant="-9" id="QYT-UH-muw"/>
+                <constraint firstItem="lhh-V4-zlV" firstAttribute="leading" secondItem="20q-oc-kPq" secondAttribute="leading" constant="-6" id="XMt-kJ-tsD"/>
+                <constraint firstAttribute="trailing" secondItem="lhh-V4-zlV" secondAttribute="trailing" constant="-8" id="xF4-G0-brP"/>
             </constraints>
             <connections>
                 <outlet property="cellText" destination="lhh-V4-zlV" id="S2G-zQ-Zgh"/>
