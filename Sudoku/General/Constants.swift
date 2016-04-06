@@ -7,6 +7,16 @@
 //
 
 import Foundation
+import UIKit
+
+// Colors
+
+let colLightYellow = UIColor(red: 0.9882, green: 0.9608, blue: 0.9176, alpha: 1.0) 
+let colLightRed = UIColor(red: 1, green: 0.7569, blue: 0.7569, alpha: 1.0)
+let colSemiRed = UIColor(red: 1, green: 0.7373, blue: 0.7373, alpha: 1.0)
+let colDemiRed = UIColor(red: 1, green: 0.6588, blue: 0.6588, alpha: 1.0)                               /* #ffa8a8 */ 
+
+// Grid
 
 let sudokuGrid: [[Int]] = [[0,2,0,0,0,0,4,0,7],
                            

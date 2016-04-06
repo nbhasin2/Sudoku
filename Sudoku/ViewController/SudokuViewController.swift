@@ -53,8 +53,8 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        self.navigationController!.navigationBar.hidden = true
-        
+        self.navigationController!.navigationBar.topItem?.title = "Sudoku"
+        self.navigationController!.navigationBar.barTintColor = colLightYellow
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		191441B31CB49CC900554B6B /* SButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B21CB49CC900554B6B /* SButton.swift */; };
 		1990B8121CB18E090046909E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990B8111CB18E090046909E /* AppDelegate.swift */; };
 		1990B8171CB18E090046909E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8151CB18E090046909E /* Main.storyboard */; };
 		1990B8191CB18E090046909E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8181CB18E090046909E /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		191441B21CB49CC900554B6B /* SButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SButton.swift; sourceTree = "<group>"; };
 		1990B80E1CB18E080046909E /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1990B8111CB18E090046909E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1990B8161CB18E090046909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,11 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191441B11CB49CBE00554B6B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				191441B21CB49CC900554B6B /* SButton.swift */,
+			);
+			name = UI;
+			path = Sudoku/UI;
+			sourceTree = "<group>";
+		};
 		1990B8051CB18E080046909E = {
 			isa = PBXGroup;
 			children = (
 				1990B8101CB18E090046909E /* Sudoku */,
 				19B132741CB48966007F05F4 /* General */,
+				191441B11CB49CBE00554B6B /* UI */,
 				1990B8421CB18FC80046909E /* Managers */,
 				1990B8431CB18FC80046909E /* Views */,
 				1990B83F1CB18F9C0046909E /* ViewController */,
@@ -311,6 +323,7 @@
 			files = (
 				19B132761CB48973007F05F4 /* Constants.swift in Sources */,
 				1990B8121CB18E090046909E /* AppDelegate.swift in Sources */,
+				191441B31CB49CC900554B6B /* SButton.swift in Sources */,
 				1990B84B1CB1A4890046909E /* SudokuCell.swift in Sources */,
 				1990B8451CB19E090046909E /* SudokuViewController.swift in Sources */,
 				1990B84D1CB1B3860046909E /* SudokuSolver.swift in Sources */,

@@ -59,11 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window!.backgroundColor = UIColor.blueColor()
         
         self.window!.makeKeyAndVisible()
-        
-        let solver = SudokuSolver(board: sudokuGrid)
-        solver.solve()
-//        solver.solve(0, col: 0, grid: &solver.sudokuGrid)
-        print(solver.sudokuGridSolution)
     }
     
 }

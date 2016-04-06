@@ -16,12 +16,12 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDx-wo-iug">
-                    <rect key="frame" x="0.0" y="552" width="600" height="48"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDx-wo-iug" customClass="SButton" customModule="Sudoku" customModuleProvider="target">
+                    <rect key="frame" x="50" y="522" width="500" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="gNV-q9-uAg"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Solve"/>
                     <connections>
                         <action selector="solveAction:" destination="-1" eventType="touchUpInside" id="C1G-td-8Td"/>
                     </connections>
@@ -42,12 +42,12 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ocg-hA-9zT"/>
-                <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" id="V9W-2T-3h5"/>
-                <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" id="aso-zA-qIk"/>
-                <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aya-ZZ-ROz"/>
+                <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" constant="50" id="V9W-2T-3h5"/>
+                <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" constant="30" id="aso-zA-qIk"/>
+                <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="aya-ZZ-ROz"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="98" id="lRT-Tl-cal"/>
             </constraints>
         </view>
