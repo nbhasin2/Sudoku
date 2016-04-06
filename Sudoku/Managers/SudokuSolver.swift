@@ -43,11 +43,14 @@ class SudokuSolver
     func solve()
     {
         self.sudokuGridSolution = deepCopy(self.sudokuBoard)
-        solve(0, col: 0, grid: &self.sudokuGridSolution!)
+        solve(0, gridCol: 0, grid: &self.sudokuGridSolution!)
     }
     
-    private func solve(var row:Int, var col:Int, inout grid:[[Int]]) -> Bool
+    private func solve(gridRow:Int, gridCol:Int, inout grid:[[Int]]) -> Bool
     {
+        var row = gridRow
+        var col = gridCol
+        
         if (row == 9)
         {
             row = 0;
@@ -61,7 +64,7 @@ class SudokuSolver
         
         if (grid[row][col] != EMPTY)
         {
-            return solve(row + 1, col: col, grid: &grid)
+            return solve(row + 1, gridCol: col, grid: &grid)
         }
         
         for value in 1...9
@@ -69,7 +72,7 @@ class SudokuSolver
             if(isTrue(row, col: col, val: value, grid: grid))
             {
                 grid[row][col] = value
-                if(solve(row + 1, col: col, grid: &grid))
+                if(solve(row + 1, gridCol: col, grid: &grid))
                 {
                     return true
                 }

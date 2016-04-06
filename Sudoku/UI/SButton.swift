@@ -18,6 +18,7 @@ class SButton: UIButton {
         self.layer.borderWidth = 0.5
         self.backgroundColor = colDemiRed
         self.tintColor = UIColor.whiteColor()
+        self.setTitleColor(colLightYellow, forState: UIControlState.Selected)
         
     }
 }
