@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SudokuViewController" customModule="Sudoku" customModuleProvider="target">
             <connections>
+                <outlet property="boardHeightConstraint" destination="tyq-kW-O9R" id="ab4-aQ-Bo9"/>
+                <outlet property="boardWidthConstraint" destination="NaN-Ds-R7V" id="f1W-U5-5lq"/>
                 <outlet property="sudokuUICollectionView" destination="cZm-Fw-x88" id="oev-3J-V3C"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fe3-MF-QLs"/>
             </connections>
@@ -27,7 +29,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cZm-Fw-x88">
-                    <rect key="frame" x="125" y="98" width="350" height="350"/>
+                    <rect key="frame" x="125" y="125" width="350" height="350"/>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="350" id="NaN-Ds-R7V"/>
@@ -44,12 +46,18 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="cZm-Fw-x88" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Nv5-ZS-Ir1"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ocg-hA-9zT"/>
                 <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" constant="50" id="V9W-2T-3h5"/>
                 <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" constant="30" id="aso-zA-qIk"/>
                 <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="aya-ZZ-ROz"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="98" id="lRT-Tl-cal"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="lRT-Tl-cal"/>
+                </mask>
+            </variation>
         </view>
     </objects>
 </document>

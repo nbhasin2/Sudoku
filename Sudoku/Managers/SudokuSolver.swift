@@ -10,6 +10,11 @@ import Foundation
 
 class SudokuSolver
 {
+    //  Constants
+    
+    let EMPTY = 0
+    
+    //  Variables
     
     var sudokuGridSolution:[[Int]]?
     var sudokuBoard:[[Int]]
@@ -37,8 +42,6 @@ class SudokuSolver
         
         return gridCopy
     }
-    
-    let EMPTY = 0
     
     func solve()
     {
@@ -80,9 +83,9 @@ class SudokuSolver
         }
         
         grid[row][col] = EMPTY
+        
         return false
     }
-    
     
     func isTrue(row:Int, col:Int, val: Int, grid:[[Int]]) -> Bool
     {
@@ -102,8 +105,8 @@ class SudokuSolver
             }
         }
         
-        var rowOffSet = Int((row / 3) * 3)
-        var colOffSet = Int((col / 3) * 3)
+        let rowOffSet = Int((row / 3) * 3)
+        let colOffSet = Int((col / 3) * 3)
         
         for rowIndex in 0...2
         {

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		191441B31CB49CC900554B6B /* SButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B21CB49CC900554B6B /* SButton.swift */; };
+		191441BA1CB5CC3E00554B6B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B61CB5CC3E00554B6B /* Device.swift */; };
+		191441BB1CB5CC3E00554B6B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B71CB5CC3E00554B6B /* Size.swift */; };
+		191441BC1CB5CC3E00554B6B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B81CB5CC3E00554B6B /* Type.swift */; };
+		191441BD1CB5CC3E00554B6B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B91CB5CC3E00554B6B /* Version.swift */; };
 		1990B8121CB18E090046909E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990B8111CB18E090046909E /* AppDelegate.swift */; };
 		1990B8171CB18E090046909E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8151CB18E090046909E /* Main.storyboard */; };
 		1990B8191CB18E090046909E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8181CB18E090046909E /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 
 /* Begin PBXFileReference section */
 		191441B21CB49CC900554B6B /* SButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SButton.swift; sourceTree = "<group>"; };
+		191441B61CB5CC3E00554B6B /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		191441B71CB5CC3E00554B6B /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		191441B81CB5CC3E00554B6B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		191441B91CB5CC3E00554B6B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		1990B80E1CB18E080046909E /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1990B8111CB18E090046909E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1990B8161CB18E090046909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,10 +103,31 @@
 			path = Sudoku/UI;
 			sourceTree = "<group>";
 		};
+		191441B41CB5CBF800554B6B /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				191441B51CB5CC3E00554B6B /* Device */,
+			);
+			name = "3rd Party";
+			path = "Sudoku/3rd Party";
+			sourceTree = "<group>";
+		};
+		191441B51CB5CC3E00554B6B /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				191441B61CB5CC3E00554B6B /* Device.swift */,
+				191441B71CB5CC3E00554B6B /* Size.swift */,
+				191441B81CB5CC3E00554B6B /* Type.swift */,
+				191441B91CB5CC3E00554B6B /* Version.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		1990B8051CB18E080046909E = {
 			isa = PBXGroup;
 			children = (
 				1990B8101CB18E090046909E /* Sudoku */,
+				191441B41CB5CBF800554B6B /* 3rd Party */,
 				19B132741CB48966007F05F4 /* General */,
 				191441B11CB49CBE00554B6B /* UI */,
 				1990B8421CB18FC80046909E /* Managers */,
@@ -321,12 +350,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				191441BB1CB5CC3E00554B6B /* Size.swift in Sources */,
 				19B132761CB48973007F05F4 /* Constants.swift in Sources */,
 				1990B8121CB18E090046909E /* AppDelegate.swift in Sources */,
 				191441B31CB49CC900554B6B /* SButton.swift in Sources */,
 				1990B84B1CB1A4890046909E /* SudokuCell.swift in Sources */,
 				1990B8451CB19E090046909E /* SudokuViewController.swift in Sources */,
+				191441BD1CB5CC3E00554B6B /* Version.swift in Sources */,
+				191441BA1CB5CC3E00554B6B /* Device.swift in Sources */,
 				1990B84D1CB1B3860046909E /* SudokuSolver.swift in Sources */,
+				191441BC1CB5CC3E00554B6B /* Type.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

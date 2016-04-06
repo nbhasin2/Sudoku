@@ -30,6 +30,12 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     @IBOutlet weak var sudokuUICollectionView: UICollectionView!
     
+    //  UI Constraints 
+    
+    @IBOutlet weak var boardWidthConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var boardHeightConstraint: NSLayoutConstraint!
+    
     //  MARK: - Constructors
     
     override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
@@ -47,6 +53,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.configurePerDeviceView()
         self.initializeView()
     }
     
@@ -60,6 +67,39 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    //  MARK: - Device 
+    
+    private func configurePerDeviceView()
+    {
+        
+        switch Device.size() {
+        case .Screen3_5Inch:
+            boardWidthConstraint.constant = CGFloat(200)
+            boardHeightConstraint.constant = CGFloat(200)
+        case .Screen4Inch:
+            boardWidthConstraint.constant = CGFloat(250)
+            boardHeightConstraint.constant = CGFloat(250)
+        case .Screen4_7Inch:
+            boardWidthConstraint.constant = CGFloat(300)
+            boardHeightConstraint.constant = CGFloat(300)
+        case .Screen5_5Inch:
+            boardWidthConstraint.constant = CGFloat(350)
+            boardHeightConstraint.constant = CGFloat(350)
+        case .Screen7_9Inch:
+            boardWidthConstraint.constant = CGFloat(350)
+            boardHeightConstraint.constant = CGFloat(350)
+        case .Screen9_7Inch:
+            boardWidthConstraint.constant = CGFloat(400)
+            boardHeightConstraint.constant = CGFloat(400)
+        case .Screen12_9Inch:
+            boardWidthConstraint.constant = CGFloat(500)
+            boardHeightConstraint.constant = CGFloat(500)
+        default:
+            boardWidthConstraint.constant = CGFloat(200)
+            boardHeightConstraint.constant = CGFloat(200)
+        }
     }
     
     //  MARK: - Initializer
