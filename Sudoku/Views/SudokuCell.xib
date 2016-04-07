@@ -17,7 +17,7 @@
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="x" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhh-V4-zlV">
                         <rect key="frame" x="-6" y="-7" width="64" height="66"/>
                         <color key="backgroundColor" red="0.93535630838585959" green="1" blue="0.99459699822016157" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
