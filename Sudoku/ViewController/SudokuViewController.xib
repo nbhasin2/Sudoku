@@ -46,16 +46,17 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spz-0o-sAA" userLabel="Loader">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="50" y="522" width="500" height="48"/>
                     <subviews>
                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6mj-ta-gRk">
-                            <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            <rect key="frame" x="240" y="14" width="20" height="20"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.75604413006756754" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="6mj-ta-gRk" firstAttribute="centerY" secondItem="spz-0o-sAA" secondAttribute="centerY" id="OM0-4n-Tle"/>
                         <constraint firstItem="6mj-ta-gRk" firstAttribute="centerX" secondItem="spz-0o-sAA" secondAttribute="centerX" id="Ph8-OJ-ZFj"/>
+                        <constraint firstAttribute="height" constant="48" id="iuf-5J-Zn0"/>
                     </constraints>
                 </view>
             </subviews>
@@ -63,17 +64,24 @@
             <constraints>
                 <constraint firstItem="spz-0o-sAA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="17y-tM-uzA"/>
                 <constraint firstAttribute="trailing" secondItem="spz-0o-sAA" secondAttribute="trailing" id="1yg-xo-Gc7"/>
+                <constraint firstItem="spz-0o-sAA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="DM2-q3-G62"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Nv5-ZS-Ir1"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ocg-hA-9zT"/>
                 <constraint firstAttribute="bottom" secondItem="spz-0o-sAA" secondAttribute="bottom" id="UBo-HW-vEs"/>
                 <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" constant="50" id="V9W-2T-3h5"/>
+                <constraint firstAttribute="bottom" secondItem="spz-0o-sAA" secondAttribute="bottom" constant="30" id="Yhn-6M-oE7"/>
                 <constraint firstItem="spz-0o-sAA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aae-2v-EO9"/>
                 <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" constant="30" id="aso-zA-qIk"/>
                 <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="aya-ZZ-ROz"/>
+                <constraint firstAttribute="trailing" secondItem="spz-0o-sAA" secondAttribute="trailing" constant="50" id="iEQ-re-U3E"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="98" id="lRT-Tl-cal"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
+                    <exclude reference="17y-tM-uzA"/>
+                    <exclude reference="1yg-xo-Gc7"/>
+                    <exclude reference="UBo-HW-vEs"/>
+                    <exclude reference="aae-2v-EO9"/>
                     <exclude reference="lRT-Tl-cal"/>
                 </mask>
             </variation>

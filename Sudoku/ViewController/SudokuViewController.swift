@@ -96,7 +96,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     {
         self.loadingView.hidden = true
         
-        self.sudokuSolver = SudokuSolver(board: sudokuGrid)
+        self.sudokuSolver = SudokuSolver(board: sudokuGrid2)
         
         self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
         self.sudokuUICollectionView?.scrollEnabled = true
