@@ -32,6 +32,10 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     @IBOutlet weak var sudokuUICollectionView: UICollectionView!
     
+    @IBOutlet weak var loadingView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     //  UI Constraints 
     
     @IBOutlet weak var boardWidthConstraint: NSLayoutConstraint!
@@ -90,6 +94,8 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     private func initializeView()
     {
+        self.loadingView.hidden = true
+        
         self.sudokuSolver = SudokuSolver(board: sudokuGrid)
         
         self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
@@ -262,6 +268,11 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
             
             if(self.sudokuSolver?.hasFoundSolution() == false)
             {
+                dispatch_async(dispatch_get_main_queue())
+                {
+                    self.loadingView.hidden = false
+                }
+        
                 if(self.sudokuSolver!.solve() == true)
                 {
                     self.currentBoardType = BoardType.Solved
@@ -274,6 +285,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
             
             dispatch_async(dispatch_get_main_queue())
             {
+                self.loadingView.hidden = true
                 self.sudokuUICollectionView.reloadData()
             }
         }

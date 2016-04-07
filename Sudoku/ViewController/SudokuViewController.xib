@@ -7,8 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SudokuViewController" customModule="Sudoku" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="6mj-ta-gRk" id="yWG-ym-DXv"/>
                 <outlet property="boardHeightConstraint" destination="tyq-kW-O9R" id="ab4-aQ-Bo9"/>
                 <outlet property="boardWidthConstraint" destination="NaN-Ds-R7V" id="f1W-U5-5lq"/>
+                <outlet property="loadingView" destination="spz-0o-sAA" id="IZW-ql-NVl"/>
                 <outlet property="sudokuUICollectionView" destination="cZm-Fw-x88" id="oev-3J-V3C"/>
                 <outlet property="view" destination="iN0-l3-epB" id="fe3-MF-QLs"/>
             </connections>
@@ -43,12 +45,29 @@
                         <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="spz-0o-sAA" userLabel="Loader">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="6mj-ta-gRk">
+                            <rect key="frame" x="290" y="290" width="20" height="20"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.75604413006756754" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6mj-ta-gRk" firstAttribute="centerY" secondItem="spz-0o-sAA" secondAttribute="centerY" id="OM0-4n-Tle"/>
+                        <constraint firstItem="6mj-ta-gRk" firstAttribute="centerX" secondItem="spz-0o-sAA" secondAttribute="centerX" id="Ph8-OJ-ZFj"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="spz-0o-sAA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="17y-tM-uzA"/>
+                <constraint firstAttribute="trailing" secondItem="spz-0o-sAA" secondAttribute="trailing" id="1yg-xo-Gc7"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Nv5-ZS-Ir1"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ocg-hA-9zT"/>
+                <constraint firstAttribute="bottom" secondItem="spz-0o-sAA" secondAttribute="bottom" id="UBo-HW-vEs"/>
                 <constraint firstAttribute="trailing" secondItem="zDx-wo-iug" secondAttribute="trailing" constant="50" id="V9W-2T-3h5"/>
+                <constraint firstItem="spz-0o-sAA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aae-2v-EO9"/>
                 <constraint firstAttribute="bottom" secondItem="zDx-wo-iug" secondAttribute="bottom" constant="30" id="aso-zA-qIk"/>
                 <constraint firstItem="zDx-wo-iug" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="aya-ZZ-ROz"/>
                 <constraint firstItem="cZm-Fw-x88" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="98" id="lRT-Tl-cal"/>

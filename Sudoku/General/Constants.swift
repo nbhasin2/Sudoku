@@ -16,7 +16,7 @@ let colLightRed = UIColor(red: 1, green: 0.7569, blue: 0.7569, alpha: 1.0)
 let colSemiRed = UIColor(red: 1, green: 0.7373, blue: 0.7373, alpha: 1.0)
 let colDemiRed = UIColor(red: 1, green: 0.6588, blue: 0.6588, alpha: 1.0)                               /* #ffa8a8 */ 
 
-// Grid
+// Simple Puzzle Grid
 
 let sudokuGrid: [[Int]] = [[0,2,0,0,0,0,4,0,7],
                            
@@ -35,3 +35,23 @@ let sudokuGrid: [[Int]] = [[0,2,0,0,0,0,4,0,7],
                            [0,7,0,8,4,0,5,0,0],
                            
                            [2,0,3,0,0,0,0,6,0]]
+
+// One of the hardest puzzle grid
+
+let sudokuGrid2: [[Int]] = [[8,0,0,0,0,0,0,0,0],
+                            
+                            [0,0,3,6,0,0,0,0,0],
+                            
+                            [0,7,0,0,9,0,2,0,0],
+                            
+                            [0,5,0,0,0,7,0,0,0],
+                            
+                            [0,0,0,0,4,5,7,0,0],
+                            
+                            [0,0,0,1,0,0,0,3,0],
+                            
+                            [0,0,1,0,0,0,0,6,8],
+                            
+                            [0,0,8,5,0,0,0,1,0],
+                            
+                            [0,9,0,0,0,0,4,0,0]]
