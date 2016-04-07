@@ -21,6 +21,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     let numberOfColumns: CGFloat = CGFloat(9)
     let gridSpacingItems: CGFloat = CGFloat(10)
     let gridSpacing: CGFloat = CGFloat(2)
+    let kSections = 9 // Number of section in UICollectionView
     
     //  Variables
     
@@ -72,6 +73,21 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     //  MARK: - Initializer
     
+    /**
+     *
+     * Name         : initializeView
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Nothing
+     *
+     * -- Description --
+     *
+     * This method is used to setup and initialize collectionview along 
+     * with sudokuSolver which helps solve the puzzle.
+     *
+     **/
+    
     private func initializeView()
     {
         self.sudokuSolver = SudokuSolver(board: sudokuGrid)
@@ -84,6 +100,22 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     }
     
     //  MARK: - Device 
+    
+    /**
+     *
+     * Name         : configurePerDeviceView
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Nothing
+     *
+     * -- Description --
+     *
+     * This method is used to modify constraint value for board at runtime
+     * to support Landscape Left / Right and Portrid modes. The method is
+     * also called by viewWillTransitionToSize to update constraint value.
+     *
+     **/
     
     private func configurePerDeviceView()
     {
@@ -164,6 +196,21 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     //  MARK: - Handle Rotation
     
+    /**
+     *
+     * Name         : viewWillTransitionToSize
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Nothing
+     *
+     * -- Description --
+     *
+     * This method gets called by System when device rotates. 
+     * We use to update view when rotation occurs.
+     *
+     **/
+    
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
     {
         configurePerDeviceView()
@@ -176,6 +223,20 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         return true;
     }
     
+    /**
+     *
+     * Name         : toggleBoard
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Nothing
+     *
+     * -- Description --
+     *
+     * This method is used to toggle between puzzle board and solution board.
+     *
+     **/
+    
     func toggleBoard()
     {
         if(self.currentBoardType == BoardType.Puzzle)
@@ -187,6 +248,8 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
             self.currentBoardType = BoardType.Puzzle
         }
     }
+    
+    //  MARK: - Button Solve Action
     
     @IBAction func solveAction(sender: UIButton)
     {
@@ -221,6 +284,20 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
 
 extension SudokuViewController: UICollectionViewDelegateFlowLayout
 {
+    /**
+     *
+     * Name         : collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath)
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : CGSize
+     *
+     * -- Description --
+     *
+     * This delegate method is used to handle cell item size.
+     *
+     **/
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let wSize = collectionView.frame.width
         let itemSize = (wSize - (gridSpacingItems * gridSpacing)) / numberOfColumns
@@ -232,10 +309,39 @@ extension SudokuViewController: UICollectionViewDelegateFlowLayout
 
 extension SudokuViewController: UICollectionViewDataSource
 {
+    /**
+     *
+     * Name         : collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int)
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Int
+     *
+     * -- Description --
+     *
+     * This delegate method is used to return number of items per section.
+     * We get this number from current board item count.
+     *
+     **/
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 9
+        return sudokuSolver!.getCurrentBoard(currentBoardType).count
     }
+    
+    /**
+     *
+     * Name         : collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : UICollectionViewCell
+     *
+     * -- Description --
+     *
+     * This delegate method is used to return UICollectionview cell with appropriate value from current board.
+     *
+     **/
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
@@ -248,9 +354,24 @@ extension SudokuViewController: UICollectionViewDataSource
         return cell
     }
     
+    /**
+     *
+     * Name         : numberOfSectionsInCollectionView(collectionView: UICollectionView)
+     *
+     * Parameters   : Nothing
+     *
+     * Return Value : Int
+     *
+     * -- Description --
+     *
+     * This delegate method is used to return number of section for UICollectionview.
+     * We use the constant value of 9 from kSections.
+     *
+     **/
+    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
     {
-        return 9
+        return kSections
     }
     
 }
