@@ -13,7 +13,6 @@
 		191441BC1CB5CC3E00554B6B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B81CB5CC3E00554B6B /* Type.swift */; };
 		191441BD1CB5CC3E00554B6B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191441B91CB5CC3E00554B6B /* Version.swift */; };
 		1990B8121CB18E090046909E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990B8111CB18E090046909E /* AppDelegate.swift */; };
-		1990B8171CB18E090046909E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8151CB18E090046909E /* Main.storyboard */; };
 		1990B8191CB18E090046909E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1990B8181CB18E090046909E /* Assets.xcassets */; };
 		1990B81C1CB18E090046909E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1990B81A1CB18E090046909E /* LaunchScreen.storyboard */; };
 		1990B8271CB18E090046909E /* SudokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1990B8261CB18E090046909E /* SudokuTests.swift */; };
@@ -51,7 +50,6 @@
 		191441B91CB5CC3E00554B6B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		1990B80E1CB18E080046909E /* Sudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1990B8111CB18E090046909E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1990B8161CB18E090046909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1990B8181CB18E090046909E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1990B81B1CB18E090046909E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1990B81D1CB18E090046909E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				1990B8111CB18E090046909E /* AppDelegate.swift */,
-				1990B8151CB18E090046909E /* Main.storyboard */,
 				1990B8181CB18E090046909E /* Assets.xcassets */,
 				1990B81A1CB18E090046909E /* LaunchScreen.storyboard */,
 				1990B81D1CB18E090046909E /* Info.plist */,
@@ -323,7 +320,6 @@
 			files = (
 				1990B81C1CB18E090046909E /* LaunchScreen.storyboard in Resources */,
 				1990B8191CB18E090046909E /* Assets.xcassets in Resources */,
-				1990B8171CB18E090046909E /* Main.storyboard in Resources */,
 				1990B8491CB1A4790046909E /* SudokuCell.xib in Resources */,
 				1990B8471CB19E240046909E /* SudokuViewController.xib in Resources */,
 			);
@@ -395,14 +391,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1990B8151CB18E090046909E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1990B8161CB18E090046909E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1990B81A1CB18E090046909E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

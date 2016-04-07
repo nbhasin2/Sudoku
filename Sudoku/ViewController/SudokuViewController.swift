@@ -73,33 +73,79 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     
     private func configurePerDeviceView()
     {
+        var height = CGFloat(200)
+        var width = CGFloat(200)
         
         switch Device.size() {
         case .Screen3_5Inch:
-            boardWidthConstraint.constant = CGFloat(200)
-            boardHeightConstraint.constant = CGFloat(200)
+            switch UIDevice.currentDevice().orientation
+            {
+            case .Portrait, .PortraitUpsideDown:
+                height = CGFloat(200)
+                width = CGFloat(200)
+            case .LandscapeLeft, .LandscapeRight:
+                height = CGFloat(150)
+                width = CGFloat(150)
+            default: break
+            }
         case .Screen4Inch:
-            boardWidthConstraint.constant = CGFloat(250)
-            boardHeightConstraint.constant = CGFloat(250)
+            switch UIDevice.currentDevice().orientation
+            {
+            case .Portrait, .PortraitUpsideDown:
+                height = CGFloat(250)
+                width = CGFloat(250)
+            case .LandscapeLeft, .LandscapeRight:
+                height = CGFloat(150)
+                width = CGFloat(150)
+            default: break
+            }
         case .Screen4_7Inch:
-            boardWidthConstraint.constant = CGFloat(300)
-            boardHeightConstraint.constant = CGFloat(300)
+            switch UIDevice.currentDevice().orientation
+            {
+            case .Portrait, .PortraitUpsideDown:
+                height = CGFloat(300)
+                width = CGFloat(300)
+            case .LandscapeLeft, .LandscapeRight:
+                height = CGFloat(150)
+                width = CGFloat(150)
+            default: break
+            }
         case .Screen5_5Inch:
-            boardWidthConstraint.constant = CGFloat(350)
-            boardHeightConstraint.constant = CGFloat(350)
+            switch UIDevice.currentDevice().orientation
+            {
+            case .Portrait, .PortraitUpsideDown:
+                height = CGFloat(350)
+                width = CGFloat(350)
+            case .LandscapeLeft, .LandscapeRight:
+                height = CGFloat(200)
+                width = CGFloat(200)
+            default: break
+            }
         case .Screen7_9Inch:
-            boardWidthConstraint.constant = CGFloat(350)
-            boardHeightConstraint.constant = CGFloat(350)
+            switch UIDevice.currentDevice().orientation
+            {
+            case .Portrait, .PortraitUpsideDown:
+                height = CGFloat(350)
+                width = CGFloat(350)
+            case .LandscapeLeft, .LandscapeRight:
+                height = CGFloat(300)
+                width = CGFloat(300)
+            default: break
+            }
         case .Screen9_7Inch:
-            boardWidthConstraint.constant = CGFloat(400)
-            boardHeightConstraint.constant = CGFloat(400)
+            height = CGFloat(400)
+            width = CGFloat(400)
         case .Screen12_9Inch:
-            boardWidthConstraint.constant = CGFloat(500)
-            boardHeightConstraint.constant = CGFloat(500)
+            height = CGFloat(500)
+            width = CGFloat(500)
         default:
-            boardWidthConstraint.constant = CGFloat(200)
-            boardHeightConstraint.constant = CGFloat(200)
+            break
         }
+        
+        boardWidthConstraint.constant = width
+        boardHeightConstraint.constant = height
+        
+        self.sudokuUICollectionView.reloadData()
     }
     
     //  MARK: - Initializer
@@ -113,6 +159,13 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         self.sudokuUICollectionView?.delegate = self
         self.sudokuUICollectionView?.dataSource = self
         self.sudokuUICollectionView.setContentOffset(CGPointZero, animated: true)
+    }
+    
+    //  MARK: - Handle Rotation 
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    {
+        configurePerDeviceView()
     }
 
     //  MARK: - UITextFieldDelegate - Hide Keyboard
