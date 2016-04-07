@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum BoardType {
+    case Solved
+    case Puzzle
+}
+
 class SudokuSolver
 {
     //  Constants
@@ -16,9 +21,9 @@ class SudokuSolver
     
     //  Variables
     
-    var sudokuGridSolution:[[Int]]?
-    var sudokuBoard:[[Int]]
-    
+    private var sudokuGridSolution:[[Int]]?
+    private var sudokuBoard:[[Int]]
+    private var isSolved:Bool = false
     
     init(board:[[Int]])
     {
@@ -43,10 +48,11 @@ class SudokuSolver
         return gridCopy
     }
     
-    func solve()
+    func solve() -> Bool
     {
         self.sudokuGridSolution = deepCopy(self.sudokuBoard)
-        solve(0, gridCol: 0, grid: &self.sudokuGridSolution!)
+        self.isSolved = solve(0, gridCol: 0, grid: &self.sudokuGridSolution!)
+        return self.isSolved
     }
     
     private func solve(gridRow:Int, gridCol:Int, inout grid:[[Int]]) -> Bool
@@ -121,6 +127,24 @@ class SudokuSolver
         
         return true
     }
-
+    
+    func hasFoundSolution() -> Bool
+    {
+        return isSolved
+    }
+    
+    func getCurrentBoard(boardType:BoardType)->[[Int]]
+    {
+        if(boardType == BoardType.Solved)
+        {
+            return self.sudokuGridSolution!
+        }
+        else if(boardType == BoardType.Puzzle)
+        {
+            return self.sudokuBoard
+        }
+        
+        return sudokuGridSolution!
+    }
     
 }

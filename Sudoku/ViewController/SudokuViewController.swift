@@ -25,6 +25,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     //  Variables
     
     var sudokuSolver: SudokuSolver?
+    var currentBoardType: BoardType = BoardType.Puzzle
     
     //  UI Elements
     
@@ -175,12 +176,38 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         return true;
     }
     
+    func toggleBoard()
+    {
+        if(self.currentBoardType == BoardType.Puzzle)
+        {
+            self.currentBoardType = BoardType.Solved
+        }
+        else
+        {
+            self.currentBoardType = BoardType.Puzzle
+        }
+    }
     
     @IBAction func solveAction(sender: UIButton)
     {
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            self.sudokuSolver?.solve()
+            
+            // Check if it has found a solution
+            // Only toggle if solution has been found 
+            // If no solution is found then there is no point in toggling
+            
+            if(self.sudokuSolver?.hasFoundSolution() == false)
+            {
+                if(self.sudokuSolver!.solve() == true)
+                {
+                    self.currentBoardType = BoardType.Solved
+                }
+            }
+            else
+            {
+                self.toggleBoard()
+            }
             
             dispatch_async(dispatch_get_main_queue())
             {
@@ -216,7 +243,7 @@ extension SudokuViewController: UICollectionViewDataSource
         // Configure cell
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SudokuCell
-        cell.cellText.text = "\(sudokuSolver!.sudokuGridSolution![indexPath.section][indexPath.row])"
+        cell.cellText.text = "\(sudokuSolver!.getCurrentBoard(currentBoardType)[indexPath.section][indexPath.row])"
         cell.cellText.delegate = self
         return cell
     }
