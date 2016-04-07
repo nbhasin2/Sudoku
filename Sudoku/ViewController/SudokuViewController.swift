@@ -326,7 +326,7 @@ extension SudokuViewController: UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return sudokuSolver!.getCurrentBoard(currentBoardType).count
+        return sudokuSolver!.getBoard(currentBoardType).count
     }
     
     /**
@@ -349,7 +349,7 @@ extension SudokuViewController: UICollectionViewDataSource
         // Configure cell
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SudokuCell
-        cell.cellText.text = "\(sudokuSolver!.getCurrentBoard(currentBoardType)[indexPath.section][indexPath.row])"
+        cell.cellText.text = "\(sudokuSolver!.getBoard(currentBoardType)[indexPath.section][indexPath.row])"
         cell.cellText.delegate = self
         return cell
     }
