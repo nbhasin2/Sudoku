@@ -69,6 +69,19 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         
     }
     
+    //  MARK: - Initializer
+    
+    private func initializeView()
+    {
+        self.sudokuSolver = SudokuSolver(board: sudokuGrid)
+        
+        self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
+        self.sudokuUICollectionView?.scrollEnabled = true
+        self.sudokuUICollectionView?.delegate = self
+        self.sudokuUICollectionView?.dataSource = self
+        self.sudokuUICollectionView.setContentOffset(CGPointZero, animated: true)
+    }
+    
     //  MARK: - Device 
     
     private func configurePerDeviceView()
@@ -148,20 +161,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
         self.sudokuUICollectionView.reloadData()
     }
     
-    //  MARK: - Initializer
-    
-    private func initializeView()
-    {
-        self.sudokuSolver = SudokuSolver(board: sudokuGrid)
-        
-        self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
-        self.sudokuUICollectionView?.scrollEnabled = true
-        self.sudokuUICollectionView?.delegate = self
-        self.sudokuUICollectionView?.dataSource = self
-        self.sudokuUICollectionView.setContentOffset(CGPointZero, animated: true)
-    }
-    
-    //  MARK: - Handle Rotation 
+    //  MARK: - Handle Rotation
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
     {
