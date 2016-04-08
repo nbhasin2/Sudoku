@@ -96,7 +96,7 @@ class SudokuViewController: UIViewController, UITextFieldDelegate
     {
         self.loadingView.hidden = true
         
-        self.sudokuSolver = SudokuSolver(board: sudokuGrid2)
+        self.sudokuSolver = SudokuSolver(board: sudokuGrid)
         
         self.sudokuUICollectionView?.registerNib((UINib(nibName: "SudokuCell", bundle: nil)), forCellWithReuseIdentifier: reuseIdentifier)
         self.sudokuUICollectionView?.scrollEnabled = true
@@ -358,10 +358,14 @@ extension SudokuViewController: UICollectionViewDataSource
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        // Configure cell value
+    
+        let value = "\(sudokuSolver!.getBoard(currentBoardType)[indexPath.section][indexPath.row])"
+        
         // Configure cell
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SudokuCell
-        cell.cellText.text = "\(sudokuSolver!.getBoard(currentBoardType)[indexPath.section][indexPath.row])"
+        cell.cellText.text = value
         cell.cellText.delegate = self
         return cell
     }

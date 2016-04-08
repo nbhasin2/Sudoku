@@ -18,19 +18,26 @@ class SudokuSolver
     //  Constants
     
     let EMPTY = 0
+    let kTotalItems = 81 // 9x9 grid = 81
     
     //  Variables
+    public var totalItemsInBoard:Int = 0
     
-    private var sudokuGridSolution:[[Int]]?
-    private var sudokuBoard:[[Int]]
+    private var sudokuGridSolution = [[Int]](count:9, repeatedValue: [Int](count: 9, repeatedValue: 0))
+    private var sudokuBoard = [[Int]](count:9, repeatedValue: [Int](count: 9, repeatedValue: 0))
     private var isSolved:Bool = false
+    private var isValidBoard:Bool = false
     
     //  MARK: - Initializer
     
     init(board:[[Int]])
     {
         sudokuBoard = board
-        sudokuGridSolution = deepCopy(board)
+        isValidBoard = checkValidPuzzle(sudokuBoard)
+        if(isValidBoard)
+        {
+            sudokuGridSolution = deepCopy(board)
+        }
     }
     
     /**
@@ -51,8 +58,13 @@ class SudokuSolver
     
     func solve() -> Bool
     {
-        self.sudokuGridSolution = deepCopy(self.sudokuBoard)
-        self.isSolved = solve(0, gridCol: 0, grid: &self.sudokuGridSolution!)
+        // Checking if board is valid 
+        
+        if(self.isValidBoard)
+        {
+            self.isSolved = solve(0, gridCol: 0, grid: &self.sudokuGridSolution)
+        }
+        
         return self.isSolved
     }
     
@@ -228,6 +240,63 @@ class SudokuSolver
         return gridCopy
     }
     
+    
+    /**
+     *
+     * Name         : checkValidPuzzle
+     *
+     * Parameters   : sudokuGrid:[[Int]]
+     *
+     * Return Value : Bool
+     *
+     * -- Description --
+     *
+     * Takes in sudoku grid and check if the grid is valid
+     * If grid satisfies the following conditions we consider it valid.
+     * - Total items are 81 
+     * - No negative item is there in the grid
+     * - Each item in the grid is from range 0 to 9
+     *
+     **/
+    
+    private func checkValidPuzzle(sudokuGrid:[[Int]]) -> Bool
+    {
+        var totalItems = 0
+        
+        for x in 0 ..< sudokuGrid.count {
+            for y in 0 ..< sudokuGrid[x].count {
+                totalItems = totalItems + 1
+                
+                let value = sudokuGrid[x][y]
+                
+                // Check if there is no negative item
+                
+                if(value < 0)
+                {
+                    return false
+                }
+                
+                // Check if item is in range 0 to 9
+                
+                if !(value >= 0 && value < 10)
+                {
+                    return false
+                }
+            }
+        }
+        
+        self.totalItemsInBoard = totalItems
+        
+        // Check if total items are equal to 81
+        
+        if(totalItems == kTotalItems)
+        {
+            return true
+        }
+        
+        return false
+    }
+    
     /**
      *
      * Name         : hasFoundSolution
@@ -266,16 +335,21 @@ class SudokuSolver
     
     func getBoard(boardType:BoardType)->[[Int]]
     {
+        if(self.isValidBoard == false)
+        {
+            return sudokuGridSolution
+        }
+        
         if(boardType == BoardType.Solved)
         {
-            return self.sudokuGridSolution!
+            return self.sudokuGridSolution
         }
         else if(boardType == BoardType.Puzzle)
         {
             return self.sudokuBoard
         }
         
-        return sudokuGridSolution!
+        return sudokuGridSolution
     }
     
 }
