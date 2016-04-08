@@ -1,5 +1,5 @@
 # Sudoku
-Simple Sudoku in Swift
+Simple Sudoku solver in Swift
 
 ## How to run
 
