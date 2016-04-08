@@ -259,7 +259,7 @@ class SudokuSolver
      *
      **/
     
-    private func checkValidPuzzle(sudokuGrid:[[Int]]) -> Bool
+    func checkValidPuzzle(sudokuGrid:[[Int]]) -> Bool
     {
         var totalItems = 0
         
