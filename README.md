@@ -3,8 +3,9 @@ Simple Sudoku in Swift
 
 ## How to run
 
-- Simply download the project and make sure you have XCode 7.3
-- Written in Swift 
+- Simply download the project and make sure you have XCode 7.3 to run it.
+- Once downloaded open project in XCode 7.3 and hit play button to run the app. 
+- Written in Swift 2 
 
 ## How to add new puzzle / solve it
 
@@ -22,6 +23,11 @@ Simple Sudoku in Swift
 ## Unit Test
 
 - Added unit tests to check checkValidPuzzle(sudokuGrid:[[Int]]) function.
+
+## Cross Platform suggestion 
+
+- Current app is natively written but the algorithm can be modified to be written in C/C++ which can be used in Linux / Windows or Mac
+- Other frameworks like IONIC and Phonegap can be used to make this game. 
 
 ____
 
